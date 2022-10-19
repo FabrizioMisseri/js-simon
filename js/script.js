@@ -17,13 +17,27 @@ for (let i = 0; i < rndNumbers.length; i++) {
     const element = document.createElement("li");
     element.classList.add("size3");
     element.innerHTML = `${rndNumbers[i]}`;
+    // setto il timer a 30s e poi li faccio sparire
+    setTimeout(function() {
+        element.classList.add("text-white");
+    }, 30000);
     item.append(element);
 }
-
+// setto il timer a poco più di 30s e poi chiedo all' utente di reinserire i numeri con la funzione sotto
+setTimeout(function() {
+    validationProcess();
+}, 30100);
 
 
 
 // FUNCTIONS
+
+
+/**
+ * Description: genera numeri random (possono esserci duplicati)
+ * @param {number} index indica i numeri da ottenere
+ * @returns {array} contiene l' array numerico
+ */
 function generateRndNumbers1to100(index) {
     const array = [];
     for (let i = 0; i < index; i++) {
@@ -31,4 +45,9 @@ function generateRndNumbers1to100(index) {
         array.push(rndNumber);
     }
     return array;
+}
+
+
+function validationProcess() {
+    return prompt("ciao");
 }
