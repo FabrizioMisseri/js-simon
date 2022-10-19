@@ -18,6 +18,7 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .size3{
@@ -26,4 +27,18 @@ ul{
 
 .text-white{
     color: white;
+}
+
+.cover-container{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.show.cover-container{
+    display: block;
 }
