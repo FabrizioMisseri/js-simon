@@ -13,6 +13,7 @@
 let flagWinnerCondition = false;
 // creo le variabili che mi servono:
 const PCnumbers = [];
+const userNumbers = [];
 const list = document.getElementById("list");
 
 // creo la funzione generate random numbers
@@ -32,6 +33,7 @@ for(let i = 0; i < 5; i++) {
 // funzione che dopo 30 secondi pulisce lo schermo
 setTimeout(clearAll, 2000);
 // nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
+setTimeout(writeUserNumbers, 2000);
 // confrontare numeri dell' utente con i numeri del PC
 // SE almeno un numero è diverso allora il flag diventa FALSE
 // al termine vedo il flag, se false - lose, se true - win
@@ -49,6 +51,18 @@ function generateRandomNumber() {
 }
 
 
+/** CLEAR ALL
+ * Description: pulisce lo schermo, svuotando l' item list
+ * @returns {}
+ */
 function clearAll() {
     list.innerHTML = "";
+}
+
+
+function writeUserNumbers() {
+    for(let i = 0; i < 5; i++) {
+        let number = parseInt(prompt(`inserisci numero ${i + 1}`));
+        userNumbers.push(number);
+    }
 }
