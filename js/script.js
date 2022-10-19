@@ -14,6 +14,7 @@ let flagWinnerCondition = false;
 // creo le variabili che mi servono:
 const PCnumbers = [];
 const userNumbers = [];
+const catchedNumbers = [];
 const list = document.getElementById("list");
 
 // creo la funzione generate random numbers
@@ -35,8 +36,12 @@ setTimeout(clearAll, 2000);
 // nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
 setTimeout(writeUserNumbers, 2000);
 // confrontare numeri dell' utente con i numeri del PC
+// FATTO
 // SE almeno un numero è diverso allora il flag diventa FALSE
-// al termine vedo il flag, se false - lose, se true - win
+// FATTO
+// al termine vedo il flag, se false - lose, se true - win e comunico i numeri indovinati
+
+
 
 
 // FUNCTIONS
@@ -60,9 +65,43 @@ function clearAll() {
 }
 
 
+/** WRITE USER NUMBERS
+ * Description: chiede all' utente 5 numeri che poi scrive nell' array userNumbers
+ * @returns {}
+ */
 function writeUserNumbers() {
     for(let i = 0; i < 5; i++) {
         let number = parseInt(prompt(`inserisci numero ${i + 1}`));
         userNumbers.push(number);
+    }
+
+    compareNumbers();
+}
+
+
+
+/** COMPARE NUMBERS 
+ * Description: confronta i numeri inseriti dall' utente con quelli generati dal pc
+ * @returns {}
+ */
+function compareNumbers() {
+    for(let i = 0; i < 5; i++) {
+        if(PCnumbers[i] == userNumbers[i]) {
+            catchedNumbers.push(userNumbers[i]);
+        } else {
+            flagWinnerCondition = false;
+        }
+    }
+
+    compareWinnerCondition();
+}
+
+
+
+function compareWinnerCondition() {
+    if(flagWinnerCondition === true) {
+        alert("you win");
+    } else {
+        alert("you lose");
     }
 }
