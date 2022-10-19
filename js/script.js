@@ -20,3 +20,8 @@
 // confrontare numeri dell' utente con i numeri del PC
 // SE almeno un numero è diverso allora il flag diventa FALSE
 // al termine vedo il flag, se false - lose, se true - win
+
+
+
+
+let i = 0; 
