@@ -49,5 +49,8 @@ function generateRndNumbers1to100(index) {
 
 
 function validationProcess() {
-    return prompt("ciao");
+    for (let i = 1; i < 6; i++) {
+        let askNum = parseInt(prompt(`inserisci il numero ${i}`));
+        
+    }
 }
