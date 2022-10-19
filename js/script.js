@@ -12,6 +12,8 @@
 // flag di winner condition su TRUE
 let flagWinnerCondition = false;
 // creo le variabili che mi servono:
+const PCnumbers = [];
+const list = document.getElementById("list");
 
 // creo la funzione generate random numbers
 // FATTO
@@ -19,8 +21,13 @@ let flagWinnerCondition = false;
 // ciclo for e genero i numeri casuali utilizzando genRndNumbers
 for(let i = 0; i < 5; i++) {
     // i numeri generati li metto dentro una array PCnumbers a parte
+    const randomNumber = generateRandomNumber();
+    PCnumbers.push(randomNumber); 
     // creo li e ci appiccico il num random, il tutto mentre pusho il valore nell' array sopra
-
+    const item = document.createElement("li");
+    item.classList.add("size3");
+    item.innerHTML = `${randomNumber}`;
+    list.append(item);
 }
 // funzione che dopo 30 secondi sovrappone il blocco cover-item su tutta la pagina
 // nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
