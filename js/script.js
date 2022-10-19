@@ -8,49 +8,15 @@
 // * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 
 
-// creo 5 numeri casuali
-const rndNumbers = generateRndNumbers1to100(5);
-console.log(rndNumbers);
-// prendo UL, e stampo in numeri a schermo
-const item = document.getElementById("item");
-for (let i = 0; i < rndNumbers.length; i++) {
-    const element = document.createElement("li");
-    element.classList.add("size3");
-    element.innerHTML = `${rndNumbers[i]}`;
-    // setto il timer a 30s e poi li faccio sparire
-    setTimeout(function() {
-        element.classList.add("text-white");
-    }, 30000);
-    item.append(element);
-}
-// setto il timer a poco più di 30s e poi chiedo all' utente di reinserire i numeri con la funzione sotto
-setTimeout(function() {
-    validationProcess();
-}, 30100);
-
-
-
-// FUNCTIONS
-
-
-/**
- * Description: genera numeri random (possono esserci duplicati)
- * @param {number} index indica i numeri da ottenere
- * @returns {array} contiene l' array numerico
- */
-function generateRndNumbers1to100(index) {
-    const array = [];
-    for (let i = 0; i < index; i++) {
-        let rndNumber = Math.floor(Math.random() * (100 - 1 + 1) + 1);
-        array.push(rndNumber);
-    }
-    return array;
-}
-
-
-function validationProcess() {
-    for (let i = 1; i < 6; i++) {
-        let askNum = parseInt(prompt(`inserisci il numero ${i}`));
-        
-    }
-}
+//                                        PSEUDO  CODICE
+// flag di winner condition su TRUE
+// creo le variabili che mi servono
+// creo la funzione generate random numbers
+// ciclo for e genero i numeri casuali utilizzando genRndNumbers
+    // i numeri generati li metto dentro una array PCnumbers a parte
+    // creo li e ci appiccico il num random, il tutto mentre pusho il valore nell' array sopra
+// funzione che dopo 30 secondi sovrappone il blocco cover-item su tutta la pagina
+// nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
+// confrontare numeri dell' utente con i numeri del PC
+// SE almeno un numero è diverso allora il flag diventa FALSE
+// al termine vedo il flag, se false - lose, se true - win
