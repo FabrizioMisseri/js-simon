@@ -8,7 +8,8 @@
 // * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 
 
-//                                        PSEUDO  CODICE
+
+
 // flag di winner condition su TRUE
 let flagWinnerCondition = true;
 // creo le variabili che mi servono:
@@ -80,7 +81,6 @@ function writeUserNumbers() {
 }
 
 
-
 /** COMPARE NUMBERS 
  * Description: confronta i numeri inseriti dall' utente con quelli generati dal pc
  * @returns {}
@@ -96,7 +96,6 @@ function compareNumbers() {
 
     compareWinnerCondition();
 }
-
 
 
 /** COMPARE WINNER CONDITION
