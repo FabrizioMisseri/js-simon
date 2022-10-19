@@ -10,8 +10,14 @@
 
 //                                        PSEUDO  CODICE
 // flag di winner condition su TRUE
-// creo le variabili che mi servono
+let flagWinnerCondition = false;
+// creo le variabili che mi servono:
+
 // creo la funzione generate random numbers
+// FATTO
+const num = generateRandomNumber();
+console.log(num);
+
 // ciclo for e genero i numeri casuali utilizzando genRndNumbers
     // i numeri generati li metto dentro una array PCnumbers a parte
     // creo li e ci appiccico il num random, il tutto mentre pusho il valore nell' array sopra
@@ -23,5 +29,7 @@
 
 
 
-
-let i = 0; 
+function generateRandomNumber() {
+    const number = Math.floor(Math.random() * (100)) + 1
+    return number;
+}
