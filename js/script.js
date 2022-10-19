@@ -29,15 +29,26 @@ for(let i = 0; i < 5; i++) {
     item.innerHTML = `${randomNumber}`;
     list.append(item);
 }
-// funzione che dopo 30 secondi sovrappone il blocco cover-item su tutta la pagina
+// funzione che dopo 30 secondi pulisce lo schermo
+setTimeout(clearAll, 2000);
 // nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
 // confrontare numeri dell' utente con i numeri del PC
 // SE almeno un numero è diverso allora il flag diventa FALSE
 // al termine vedo il flag, se false - lose, se true - win
 
 
+// FUNCTIONS
 
+/** GENERATE RANDOM NUMBER
+ * Description: genera un numero da 1 a 100 in maniera randomica
+ * @returns {number} 
+ */
 function generateRandomNumber() {
     const number = Math.floor(Math.random() * (100)) + 1
     return number;
+}
+
+
+function clearAll() {
+    list.innerHTML = "";
 }
