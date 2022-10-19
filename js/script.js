@@ -10,7 +10,7 @@
 
 //                                        PSEUDO  CODICE
 // flag di winner condition su TRUE
-let flagWinnerCondition = false;
+let flagWinnerCondition = true;
 // creo le variabili che mi servono:
 const PCnumbers = [];
 const userNumbers = [];
@@ -32,14 +32,15 @@ for(let i = 0; i < 5; i++) {
     list.append(item);
 }
 // funzione che dopo 30 secondi pulisce lo schermo
-setTimeout(clearAll, 2000);
+setTimeout(clearAll, 10000);
 // nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
-setTimeout(writeUserNumbers, 2000);
+setTimeout(writeUserNumbers, 10000);
 // confrontare numeri dell' utente con i numeri del PC
 // FATTO
 // SE almeno un numero è diverso allora il flag diventa FALSE
 // FATTO
 // al termine vedo il flag, se false - lose, se true - win e comunico i numeri indovinati
+// FATTO
 
 
 
@@ -98,10 +99,14 @@ function compareNumbers() {
 
 
 
+/** COMPARE WINNER CONDITION
+ * Description: confrontiamo il valore booleano del flag per stabilire la vittoria o la sconfitta
+ * @returns {}
+ */
 function compareWinnerCondition() {
     if(flagWinnerCondition === true) {
-        alert("you win");
+        alert(`YOU WIN... hai vinto indovinando ${catchedNumbers.length} numeri. I numeri indovinati sono ${catchedNumbers}`);
     } else {
-        alert("you lose");
+        alert(`YOU LOSE... hai perso indovinando solo ${catchedNumbers.length} numeri. I numeri indovinati sono ${catchedNumbers}`);
     }
 }
