@@ -35,7 +35,11 @@ for(let i = 0; i < 5; i++) {
 // funzione che dopo 30 secondi pulisce lo schermo
 setTimeout(clearAll, 10000);
 // nella stessa funzione che si attiva 30s dopo chiedere tramite 5 prompt (ciclo for) i numeri all' utente e    salvarli in un array userNumbers
-setTimeout(writeUserNumbers, 10100);
+setTimeout(function(){
+    writeUserNumbers();
+    compareNumbers();
+    compareWinnerCondition();
+}, 10100);
 // confrontare numeri dell' utente con i numeri del PC
 // FATTO
 // SE almeno un numero è diverso allora il flag diventa FALSE
@@ -77,7 +81,6 @@ function writeUserNumbers() {
         userNumbers.push(number);
     }
 
-    compareNumbers();
 }
 
 
@@ -94,7 +97,6 @@ function compareNumbers() {
         }
     }
 
-    compareWinnerCondition();
 }
 
 
